@@ -1,0 +1,6 @@
+C:\Users\polcr\source\repos\StudentsTest\StudentBL\bin\Debug\StudentBL.dll
+C:\Users\polcr\source\repos\StudentsTest\StudentBL\bin\Debug\StudentBL.pdb
+C:\Users\polcr\source\repos\StudentsTest\StudentBL\obj\Debug\StudentBL.csproj.CoreCompileInputs.cache
+C:\Users\polcr\source\repos\StudentsTest\StudentBL\obj\Debug\StudentBL.dll
+C:\Users\polcr\source\repos\StudentsTest\StudentBL\obj\Debug\StudentBL.pdb
+C:\Users\polcr\source\repos\StudentsTest\StudentBL\obj\Debug\StudentBL.csprojResolveAssemblyReference.cache

@@ -1,0 +1,8 @@
+C:\Users\polcr\source\repos\StudentsTest\StudentsTest\bin\Debug\StudentsTest.exe
+C:\Users\polcr\source\repos\StudentsTest\StudentsTest\bin\Debug\StudentsTest.pdb
+C:\Users\polcr\source\repos\StudentsTest\StudentsTest\obj\Debug\StudentsTest.csprojResolveAssemblyReference.cache
+C:\Users\polcr\source\repos\StudentsTest\StudentsTest\obj\Debug\StudentsTest.csproj.CoreCompileInputs.cache
+C:\Users\polcr\source\repos\StudentsTest\StudentsTest\obj\Debug\StudentsTest.exe
+C:\Users\polcr\source\repos\StudentsTest\StudentsTest\obj\Debug\StudentsTest.pdb
+C:\Users\polcr\source\repos\StudentsTest\StudentsTest\bin\Debug\StudentBL.dll
+C:\Users\polcr\source\repos\StudentsTest\StudentsTest\bin\Debug\StudentBL.pdb
