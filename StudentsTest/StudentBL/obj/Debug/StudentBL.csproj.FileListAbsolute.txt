@@ -4,3 +4,9 @@ C:\Users\polcr\source\repos\StudentsTest\StudentBL\obj\Debug\StudentBL.csproj.Co
 C:\Users\polcr\source\repos\StudentsTest\StudentBL\obj\Debug\StudentBL.dll
 C:\Users\polcr\source\repos\StudentsTest\StudentBL\obj\Debug\StudentBL.pdb
 C:\Users\polcr\source\repos\StudentsTest\StudentBL\obj\Debug\StudentBL.csprojResolveAssemblyReference.cache
+E:\Github\JournalTest\StudentsTest\StudentBL\bin\Debug\StudentBL.dll
+E:\Github\JournalTest\StudentsTest\StudentBL\bin\Debug\StudentBL.pdb
+E:\Github\JournalTest\StudentsTest\StudentBL\obj\Debug\StudentBL.csprojResolveAssemblyReference.cache
+E:\Github\JournalTest\StudentsTest\StudentBL\obj\Debug\StudentBL.csproj.CoreCompileInputs.cache
+E:\Github\JournalTest\StudentsTest\StudentBL\obj\Debug\StudentBL.dll
+E:\Github\JournalTest\StudentsTest\StudentBL\obj\Debug\StudentBL.pdb

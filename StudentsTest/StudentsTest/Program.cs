@@ -14,6 +14,10 @@ namespace StudentsTest
             string fileName = "students.txt";
             string[] subjects = {"Math", "Ukrainian language", "Ukrainian literature", "PE"};
             List<Student> students = Student.ReadStudents(fileName);
+            foreach (var student in students)
+            {
+                student.ReadMarks();
+            }
             while (true)
             {
                 Console.Write("Выберите, что хотите сделать (2 - выбрать ученика, 1 - добавить, 0 - удалить список, -1 - выход из программы): ");
@@ -22,17 +26,6 @@ namespace StudentsTest
                 if (mode == 0)
                 {
                     for (int i = students.Count - 1; i >= 0; i--) students.RemoveAt(i);
-                    DirectoryInfo mainDir = new DirectoryInfo("students/9/");
-                    DirectoryInfo[] dirs = mainDir.GetDirectories();
-                    foreach (var dir in dirs)
-                    {
-                        FileInfo[] files = dir.GetFiles();
-                        foreach (var file in files)
-                        {
-                            file.Delete();
-                        }
-                        dir.Delete();
-                    }
                 }
                 else if (mode == 1)
                 {
@@ -52,12 +45,12 @@ namespace StudentsTest
                     int NumberOfStudent = Convert.ToInt32(Console.ReadLine());
                     NumberOfStudent--;
                     Console.Write("Выберите режим работы с учеником (1 - работа с оценками, 0 - удалить студента): ");
-                    int markMode = Convert.ToInt32(Console.ReadLine());
-                    if (markMode == 0)
+                    int studentMode = Convert.ToInt32(Console.ReadLine());
+                    if (studentMode == 0)
                     {
                         students.RemoveAt(NumberOfStudent);
                     }
-                    else if (markMode == 1)
+                    else if (studentMode == 1)
                     {
                         Console.Write("Выберите предмет из списка: ");
                         foreach (var _subject in subjects)
@@ -67,8 +60,19 @@ namespace StudentsTest
 
                         string subject = Console.ReadLine();
                         Console.Write("Выберите режим работы с оценками (1 - добавить, 0 - удалить): ");
-                        
-
+                        int markMode = Convert.ToInt32(Console.ReadLine());
+                        if (markMode == 0)
+                        {
+                            students[NumberOfStudent].DeleteMarks(subject);
+                        }
+                        else if (markMode == 1)
+                        {
+                            Console.Write("Напишите через пробел оценки, которые хотите добавить: ");
+                            string[] markTempStrings = Console.ReadLine().Split(' ');
+                            int[] markTempInts = new int[markTempStrings.Length];
+                            for (int i = 0; i < markTempStrings.Length; i++) markTempInts[i] = Convert.ToInt32(markTempStrings[i]);
+                            students[NumberOfStudent].AddMarks(subject, markTempInts);
+                        }
                     }
                 }
             }

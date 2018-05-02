@@ -24,12 +24,48 @@ namespace StudentBL
             }
         }
 
+        public void ReadMarks()
+        {
+            DirectoryInfo dir = new DirectoryInfo("students/9/" + this.Name + ' ' + this.Surname + ' ' + this.Patronomyc + "/");
+            FileInfo[] files = dir.GetFiles();
+            foreach (var file in files)
+            {
+                using (StreamReader reader = new StreamReader(file.FullName))
+                {
+                    string[] markTempStrings = reader.ReadLine().Split(' ');
+                    string subjectName = file.Name;
+                    subjectName.Remove(subjectName.Length - 5, 4);
+                    foreach (var markTempString in markTempStrings)
+                    {
+                        this.Marks[subjectName].Add(Convert.ToInt32(markTempString));
+                    }
+                }
+            }
+        }
+
         public void AddMarks(string Subject, params int[] marks)
         {
-            foreach (var mark in marks)
+            using (StreamWriter writer = new StreamWriter("students/9/" + this.Name + ' ' + this.Surname + ' ' + this.Patronomyc + "/" + Subject + ".txt"))
             {
-                this.Marks[Subject].Add(mark);
+                foreach (var mark in marks)
+                {
+                    this.Marks[Subject].Add(mark);
+                }
+                foreach (var mark in this.Marks[Subject])
+                {
+                    writer.Write(mark.ToString() + " ");
+                }
             }
+        }
+
+        public void DeleteMarks(string Subject)
+        {
+            for (int i = this.Marks[Subject].Count; i >= 0; i--)
+            {
+                this.Marks[Subject].RemoveAt(i);
+            }
+            File.Delete("students/9/" + this.Name + ' ' + this.Surname + ' ' + this.Patronomyc + "/" + Subject + ".txt");
+            File.Create("students/9/" + this.Name + ' ' + this.Surname + ' ' + this.Patronomyc + "/" + Subject + ".txt");
         }
 
         public static List<Student> ReadStudents(string fileName)
