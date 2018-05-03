@@ -25,6 +25,11 @@ namespace StudentBL
             }
         }
 
+        public void DeleteMark(string Subject, int Number)
+        {
+            this.Marks[Subject].RemoveAt(Number--);
+        }
+
         public void ReadMarks()
         {
             DirectoryInfo dir = new DirectoryInfo("students/9/" + this.Name + ' ' + this.Surname + ' ' + this.Patronomyc + "/");
