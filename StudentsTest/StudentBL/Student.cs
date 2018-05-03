@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 
@@ -32,13 +33,17 @@ namespace StudentBL
             {
                 using (StreamReader reader = new StreamReader(file.FullName))
                 {
-                    string[] markTempStrings = reader.ReadLine().Split(' ');
-                    string subjectName = file.Name;
-                    subjectName.Remove(subjectName.Length - 5, 4);
-                    foreach (var markTempString in markTempStrings)
+                    try
                     {
-                        this.Marks[subjectName].Add(Convert.ToInt32(markTempString));
+                        string[] markTempStrings = reader.ReadLine().Split(' ');
+                        string subjectName = file.Name;
+                        subjectName.Remove(subjectName.Length - 5, 4);
+                        foreach (var markTempString in markTempStrings)
+                        {
+                            this.Marks[subjectName].Add(Convert.ToInt32(markTempString));
+                        }
                     }
+                    catch { }
                 }
             }
         }
@@ -60,10 +65,15 @@ namespace StudentBL
 
         public void DeleteMarks(string Subject)
         {
-            for (int i = this.Marks[Subject].Count; i >= 0; i--)
+            try
             {
-                this.Marks[Subject].RemoveAt(i);
+                for (int i = this.Marks[Subject].Count; i >= 0; i--)
+                {
+                    this.Marks[Subject].RemoveAt(i);
+                }
             }
+            catch { }
+            
             File.Delete("students/9/" + this.Name + ' ' + this.Surname + ' ' + this.Patronomyc + "/" + Subject + ".txt");
             File.Create("students/9/" + this.Name + ' ' + this.Surname + ' ' + this.Patronomyc + "/" + Subject + ".txt");
         }
